@@ -7,8 +7,8 @@ import jakarta.persistence.EmbeddedId;
 @Embeddable
 public class IngredienteRecetaId {
     @Column(nullable = false)
-    private int idRecetas;
+    private int idReceta;
 
     @Column(nullable = false)
-    private int idIngredientes;
+    private int idIngrediente;
 }

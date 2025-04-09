@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name="Ingredientes")
+@Table(name="ingredientes")
 public class Ingrediente {
     @Id
-    private int idIngrediente;
+    private int id;
 
     @Column(nullable = false)
     private String nombre;
@@ -18,19 +18,18 @@ public class Ingrediente {
 
     @ManyToMany
     @JoinTable(
-            name = "Ingredientes_Alergenos",
-            joinColumns = @JoinColumn(name = "id_ingredientes"),
-            inverseJoinColumns = @JoinColumn(name = "id_recetas")
+            name = "ingredientes_alergenos",
+            joinColumns = @JoinColumn(name = "id_ingrediente"),
+            inverseJoinColumns = @JoinColumn(name = "id_alergeno")
     )
     private Set<Alergeno> alergenos;
 
-    public int getidIngrediente(){
-        return idIngrediente;
+    public int getId() {
+        return id;
     }
-    
 
-    public void setidIngrediente(int idIngrediente) {
-        this.idIngrediente = idIngrediente;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -48,5 +47,4 @@ public class Ingrediente {
     public void setAlergenos(Set<Alergeno> alergenos) {
         this.alergenos = alergenos;
     }
-
 }

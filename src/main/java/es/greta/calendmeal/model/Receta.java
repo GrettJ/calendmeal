@@ -6,22 +6,23 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Recetas")
+@Table(name="recetas")
 public class Receta {
     @Id
-    private int idReceta;
+    private int id;
 
     @Column(nullable = false)
     private String nombre;
 
     @Column(nullable = false)
     private String instrucciones;
-    public int getIdReceta() {
-        return idReceta;
+
+    public int getId() {
+        return id;
     }
 
-    public void setIdReceta(int idReceta) {
-        this.idReceta = idReceta;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -39,6 +40,4 @@ public class Receta {
     public void setInstrucciones(String instrucciones) {
         this.instrucciones = instrucciones;
     }
-
-
 }

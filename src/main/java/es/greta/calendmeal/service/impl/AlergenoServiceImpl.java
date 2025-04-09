@@ -14,6 +14,8 @@ public class AlergenoServiceImpl implements AlergenoService {
     private AlergenoRepository alergenoRepository;
     @Override
     public List<Alergeno> getAllAlergenos() {
-        return alergenoRepository.findAll();
+
+        return alergenoRepository.findAllAlergenos();
+
     }
 }

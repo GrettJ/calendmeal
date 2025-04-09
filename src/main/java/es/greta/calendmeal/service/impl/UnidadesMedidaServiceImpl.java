@@ -15,6 +15,8 @@ public class UnidadesMedidaServiceImpl implements UnidadesMedidaService {
 
     @Override
     public List<UnidadesMedida> getAllUnidadesMedida() {
+
         return unidadesMedidaRepository.findAll();
+
     }
 }

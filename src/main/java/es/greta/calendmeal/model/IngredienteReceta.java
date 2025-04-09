@@ -1,15 +1,17 @@
 package es.greta.calendmeal.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="ingredientes_recetas")
 public class IngredienteReceta {
     @EmbeddedId
     private IngredienteRecetaId ingredienteRecetaId;
     @Column(nullable = false)
     private int cantidad;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_medida", nullable = false)
     private UnidadesMedida medida;
 
     public IngredienteRecetaId getIngredienteRecetaId() {

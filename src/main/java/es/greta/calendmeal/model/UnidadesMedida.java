@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Unidades_Medida")
+@Table(name="unidades_medida")
 public class UnidadesMedida {
     @Id
     private int id;
