@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${titulo}">Calendmeal</h1>
+    <div class="card">
+        <p th:text="${mensaje}">Breve descripcion de la web</p>
+        <a th:href="@{/destino}" class="boton">Generar plan</a>
+    </div>
+</div>
+</body>
+</html>

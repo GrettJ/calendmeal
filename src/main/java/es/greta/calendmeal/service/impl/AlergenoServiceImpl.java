@@ -18,4 +18,5 @@ public class AlergenoServiceImpl implements AlergenoService {
         return alergenoRepository.findAllAlergenos();
 
     }
+
 }
