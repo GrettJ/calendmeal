@@ -1,13 +1,15 @@
 package es.greta.calendmeal.service;
 
-import es.greta.calendmeal.dto.RecetaDetalleDTO;
 import java.util.List;
-import java.util.Map;
+
+import es.greta.calendmeal.dto.RecetaDTO;
+import es.greta.calendmeal.model.Receta;
 
 public interface RecetaService {
-    List<Map<String, Object>> buscarRecetas(String nombre);
-
-    RecetaDetalleDTO obtenerReceta(Long id);
+	
+	List<Receta> buscarTodasRecetas();
+    List<Receta> buscarRecetas(String nombre);
+    RecetaDTO obtenerRecetaConIngredientes(Long id);
 
 
 }

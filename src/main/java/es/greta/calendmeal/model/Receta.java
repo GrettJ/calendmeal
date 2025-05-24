@@ -1,8 +1,11 @@
 package es.greta.calendmeal.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,10 +19,10 @@ public class Receta {
 
     @Column(nullable = false)
     private String instrucciones;
+    
 
-    private String alergenos;
-
-
+    @OneToMany(mappedBy = "ingredienteRecetaId.idReceta") // O similar, revisar
+    private List<IngredienteReceta> ingredientesReceta;
 
     public Long getId() {
         return id;
@@ -44,11 +47,13 @@ public class Receta {
     public void setInstrucciones(String instrucciones) {
         this.instrucciones = instrucciones;
     }
-    public String getAlergenos() {
-        return alergenos;
-    }
 
-    public void setAlergenos(String alergenos) {
-        this.alergenos = alergenos;
-    }
+	public List<IngredienteReceta> getIngredientesReceta() {
+		return ingredientesReceta;
+	}
+
+	public void setIngredientesReceta(List<IngredienteReceta> ingredientesReceta) {
+		this.ingredientesReceta = ingredientesReceta;
+	}
+    
 }

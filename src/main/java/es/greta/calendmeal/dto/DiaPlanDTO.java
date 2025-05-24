@@ -1,11 +1,10 @@
 package es.greta.calendmeal.dto;
 
-import java.util.List;
-
 public class DiaPlanDTO {
 
     private String dia;
-    private List<RecetaResumenDTO> comidas;
+    private RecetaDTO comida;
+    private RecetaDTO cena;
 
     public String getDia() {
         return dia;
@@ -15,11 +14,20 @@ public class DiaPlanDTO {
         this.dia = dia;
     }
 
-    public List<RecetaResumenDTO> getComidas() {
-        return comidas;
-    }
+	public RecetaDTO getComida() {
+		return comida;
+	}
 
-    public void setComidas(List<RecetaResumenDTO> comidas) {
-        this.comidas = comidas;
-    }
+	public void setComida(RecetaDTO comida) {
+		this.comida = comida;
+	}
+
+	public RecetaDTO getCena() {
+		return cena;
+	}
+
+	public void setCena(RecetaDTO cena) {
+		this.cena = cena;
+	}
+    
 }
