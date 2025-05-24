@@ -145,3 +145,28 @@ INSERT INTO recetas (id, nombre, instrucciones) VALUES (nextval('recetas_id_seq'
 INSERT INTO recetas (id, nombre, instrucciones) VALUES (nextval('recetas_id_seq'), 'Tarta de Manzana', '1. Precalentar el horno a 180°C.\n2. Extender la masa de hojaldre en un molde.\n3. Pelar y cortar las manzanas en rodajas finas.\n4. Colocar las manzanas sobre la masa y espolvorear con azúcar moreno.\n5. Hornear durante 30 minutos.');
 
 
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno, ) VALUES (1, 43); -- Harina - Gluten
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (2, 2); -- Huevo - Huevo
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (3, 44); -- Mantequilla - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (12, 44); -- Queso Parmesano - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (13, 44); -- Queso Mozarella - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (14, 44); -- Queso Gorgonzola - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (19, 44); -- Leche - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (24, 46); -- Crema de cacahuete - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (27, 43); -- Hojaldre - Gluten
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (28, 44); -- Nata para cocinar - Lactosa        
+
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 1, 250, 1); -- Tarta de Zanahoria - Harina
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 2, 3, 5); -- Tarta de Zanahoria - Huevo
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 3, 100, 1); -- Tarta de Zanahoria - Mantequilla
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 6, 200, 1); -- Tarta de Zanahoria - Zanahoria
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (1, 7, 100, 1); -- Ensalada de Lechuga y Tomate - Lechuga
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (1, 8, 100, 1); -- Ensalada de Lechuga y Tomate - Tomate
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 1, 200, 1); -- Pizza Margarita - Harina
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 35, 1, 5); -- Pizza Margarita - Salsa de Tomate
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 13, 150, 1); -- Pizza Margarita - Queso Mozarella
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (7, 25, 200, 1); -- Pasta con Salsa de Queso - Pasta
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (7, 14, 100, 1); -- Pasta con Salsa de Queso - Queso Gorgonzola    
+
+
+
