@@ -37,7 +37,8 @@ public class RecetaServiceImpl implements RecetaService {
 	            .map(ir -> new IngredienteDTO(
 	                ir.getIngrediente().getNombre(), // o si tienes entidad Ingrediente
 	                ir.getCantidad(),
-	                ir.getMedida().getNombre()
+	                ir.getMedida().getNombre(),
+	                ir.getIngrediente().getAlergenos().stream().map(d-> d.getNombre()).toList()
 	            ))
 	            .collect(Collectors.toList());
 
