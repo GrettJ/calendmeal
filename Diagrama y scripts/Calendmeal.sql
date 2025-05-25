@@ -79,7 +79,7 @@ INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq
 INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq'), 'tazas');
 INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq'), 'cucharadas');
 INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq'), 'cucharaditas');
-INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq'), 'piezas');
+INSERT INTO unidades_medida (id, nombre) VALUES (nextval('unidades_medida_id_seq'), 'unidades');
 
 
 INSERT INTO alergenos (id, nombre) VALUES (nextval('alergenos_id_seq'), 'Marisco');
@@ -145,28 +145,34 @@ INSERT INTO recetas (id, nombre, instrucciones) VALUES (nextval('recetas_id_seq'
 INSERT INTO recetas (id, nombre, instrucciones) VALUES (nextval('recetas_id_seq'), 'Tarta de Manzana', '1. Precalentar el horno a 180°C.\n2. Extender la masa de hojaldre en un molde.\n3. Pelar y cortar las manzanas en rodajas finas.\n4. Colocar las manzanas sobre la masa y espolvorear con azúcar moreno.\n5. Hornear durante 30 minutos.');
 
 
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno, ) VALUES (1, 43); -- Harina - Gluten
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (2, 2); -- Huevo - Huevo
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (3, 44); -- Mantequilla - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (12, 44); -- Queso Parmesano - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (13, 44); -- Queso Mozarella - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (14, 44); -- Queso Gorgonzola - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (19, 44); -- Leche - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (24, 46); -- Crema de cacahuete - Lactosa
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (27, 43); -- Hojaldre - Gluten
-INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES (28, 44); -- Nata para cocinar - Lactosa        
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno, ) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Harina'),( SELECT a.id FROM alergenos a WHERE nombre = 'Gluten')); -- Harina - Gluten
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Huevo'),( SELECT a.id FROM alergenos a WHERE nombre = 'Huevo')); -- Huevo - Huevo
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Mantequilla'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Mantequilla - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Queso Parmesano'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Queso Parmesano - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Queso Mozarella'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Queso Mozarella - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Queso Gorgonzola'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Queso Gorgonzola - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Leche'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Leche - Lactosa
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Crema de Cacahuete'),( SELECT a.id FROM alergenos a WHERE nombre = 'Cacahuete')); -- Crema de cacahuete - Cacahuete
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Hojaldre'),( SELECT a.id FROM alergenos a WHERE nombre = 'Gluten')); -- Hojaldre - Gluten
+INSERT INTO ingredientes_alergenos (id_ingrediente, id_alergeno) VALUES ((SELECT i.id FROM ingredientes i WHERE nombre = 'Nata para cocinar'),( SELECT a.id FROM alergenos a WHERE nombre = 'Lactosa')); -- Nata para cocinar - Lactosa   
 
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 1, 250, 1); -- Tarta de Zanahoria - Harina
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 2, 3, 5); -- Tarta de Zanahoria - Huevo
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 3, 100, 1); -- Tarta de Zanahoria - Mantequilla
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (4, 6, 200, 1); -- Tarta de Zanahoria - Zanahoria
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (1, 7, 100, 1); -- Ensalada de Lechuga y Tomate - Lechuga
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (1, 8, 100, 1); -- Ensalada de Lechuga y Tomate - Tomate
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 1, 200, 1); -- Pizza Margarita - Harina
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 35, 1, 5); -- Pizza Margarita - Salsa de Tomate
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (6, 13, 150, 1); -- Pizza Margarita - Queso Mozarella
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (7, 25, 200, 1); -- Pasta con Salsa de Queso - Pasta
-INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES (7, 14, 100, 1); -- Pasta con Salsa de Queso - Queso Gorgonzola    
 
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT  r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'),( SELECT i.id FROM ingredientes i WHERE nombre = 'Harina'), 200, 1); -- Tarta de Zanahoria - Harina
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'),( SELECT i.id FROM ingredientes i WHERE nombre = 'Levadura'), 1, 5); -- Tarta de Zanahoria - Levadura
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'),( SELECT i.id FROM ingredientes i WHERE nombre = 'Azucar'), 200, 1); -- Tarta de Zanahoria - Azucar
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Huevo'), 3, 1); -- Tarta de Zanahoria - Huevo
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Mantequilla'), 100, 1); -- Tarta de Zanahoria - Mantequilla
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Tarta de Zanahoria'),( SELECT i.id FROM ingredientes i WHERE nombre = 'Zanahoria'), 200, 1); -- Tarta de Zanahoria - Zanahoria
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Ensalada de Lechuga y Tomate'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Lechuga'), 100, 1); -- Ensalada de Lechuga y Tomate - Lechuga
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Ensalada de Lechuga y Tomate'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Tomate'), 2, 6); -- Ensalada de Lechuga y Tomate - Tomate
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Harina'), 200, 1); -- Ensalada de Lechuga y Tomate - Aceite de Oliva
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Aceite de Oliva'), 30, 2); -- Pizza Margarita - Aceite de Oliva
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Levadura'), 1, 5); -- Pizza Margarita - Levadura
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Sal'), 5, 1); -- Pizza Margarita - Sal
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Tomate frito'), 100, 2); -- Pizza Margarita - Tomate frito
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pizza Margarita'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Queso Mozarella'), 150, 1); -- Pizza Margarita - Queso Mozarella
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pasta con Salsa de Queso'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Pasta'), 200, 1); -- Pasta con Salsa de Queso - Pasta
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pasta con Salsa de Queso'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Nata para cocinar'), 100, 2); -- Pasta con Salsa de Queso - Nata para cocinar
+INSERT INTO ingredientes_recetas (id_receta, id_ingrediente, cantidad, id_medida) VALUES ((SELECT r.id FROM recetas r WHERE nombre = 'Pasta con Salsa de Queso'), (SELECT i.id FROM ingredientes i WHERE nombre = 'Queso Gorgonzola'), 50, 1); -- Pasta con Salsa de Queso - Queso Gorgonzola
 
 
