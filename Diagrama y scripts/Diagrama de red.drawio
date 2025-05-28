@@ -1,9 +1,34 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.9">
   <diagram name="Página-1" id="VxijDjcR93rzRmDq-C9k">
-    <mxGraphModel>
+    <mxGraphModel dx="1426" dy="783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iMf5UtkzVr7sBg3LG4va-1" target="iMf5UtkzVr7sBg3LG4va-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="422" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-1" value="Cliente web/ móvil" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="316" y="100" width="204" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iMf5UtkzVr7sBg3LG4va-3" target="iMf5UtkzVr7sBg3LG4va-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="418" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-3" value="Frontend Angular 19&lt;div&gt;(servido por ng serv)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="318" y="230" width="202" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iMf5UtkzVr7sBg3LG4va-5" target="iMf5UtkzVr7sBg3LG4va-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-5" value="Backend Spring Boot (Java)&lt;div&gt;Puerto 8080&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="360" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iMf5UtkzVr7sBg3LG4va-6" value="Base de datos PostgreSQL&lt;div&gt;Esquema: calendmeal&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="490" width="200" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
