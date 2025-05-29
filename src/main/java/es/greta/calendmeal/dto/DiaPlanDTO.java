@@ -1,5 +1,7 @@
 package es.greta.calendmeal.dto;
 
+import java.util.List;
+
 public class DiaPlanDTO {
 
     private String dia;
@@ -29,5 +31,5 @@ public class DiaPlanDTO {
 	public void setCena(RecetaDTO cena) {
 		this.cena = cena;
 	}
-    
+
 }

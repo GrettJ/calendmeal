@@ -5,4 +5,6 @@ import es.greta.calendmeal.dto.PlanDTO;
 public interface PlanService {
 
     PlanDTO generarPlanSemanal();
+
+    PlanDTO generarPlanSemanalExcluyendoAlergeno(Integer alergenoId);
 }

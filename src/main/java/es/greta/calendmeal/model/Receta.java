@@ -21,7 +21,7 @@ public class Receta {
     private String instrucciones;
     
 
-    @OneToMany(mappedBy = "ingredienteRecetaId.idReceta") // O similar, revisar
+    @OneToMany(mappedBy = "ingredienteRecetaId.idReceta")
     private List<IngredienteReceta> ingredientesReceta;
 
     public Long getId() {

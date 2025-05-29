@@ -49,6 +49,7 @@ public class IngredienteDTO {
 		return alergenos;
 	}
 
+
 	public void setAlergenos(List<String> alergenos) {
 		this.alergenos = alergenos;
 	}
