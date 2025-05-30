@@ -19,7 +19,7 @@ El backend se encarga de:
 - **Spring Boot 3+**
 - **Spring Data JPA**
 - **PostgreSQL**
-- **Maven** o **Gradle** (según tu setup)
+- **Maven**
 - **Spring Web** para la capa REST
 
 ---
@@ -37,12 +37,3 @@ El backend se encarga de:
 - Método para generar un plan semanal de comidas variado.
 - Cada día del plan puede incluir varias comidas (desayuno, comida, cena, etc.).
 
----
-
-## 🔧 Instalación y ejecución
-
-### 1. Clona el repositorio
-
-```bash
-git clone git@github.com:tu-usuario/calendmeal-backend.git
-cd calendmeal-backend
